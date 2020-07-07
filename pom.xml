@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.helidon.applications</groupId>
         <artifactId>helidon-mp</artifactId>
-        <version>2.0.0-M3</version>
+        <version>2.0.0</version>
         <relativePath/>
     </parent>
     <groupId>com.fmoraes</groupId>

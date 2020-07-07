@@ -1,6 +1,7 @@
 package com.fmoraes.plangenerator.resources;
 
 import java.util.stream.Collectors;
+import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
@@ -21,7 +22,7 @@ public class ConstraintViolationExceptionMapper implements ExceptionMapper<Const
                 .filter(violation -> violation.getMessage() != null)
                 .collect(
                         Collectors.groupingBy(violation -> violation.getPropertyPath().toString(),
-                                Collectors.mapping(violation -> violation.getMessage(), Collectors.toSet())
+                                Collectors.mapping(ConstraintViolation::getMessage, Collectors.toSet())
                         )
                 );
         
